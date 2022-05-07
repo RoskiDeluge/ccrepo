@@ -5,6 +5,7 @@ import { getCardById, getFeaturedCards } from '../../helpers/api-util';
 import CardSummary from '../../components/card-detail/card-summary';
 import CardLogistics from '../../components/card-detail/card-logistics';
 import ErrorAlert from '../../components/ui/error-alert';
+import Comments from '../../components/input/comments';
 
 export default function EventDetail({ selectedCard }) {
   const card = selectedCard;
@@ -37,6 +38,7 @@ export default function EventDetail({ selectedCard }) {
         <p>Suit: {card.suit}</p>
         <p>Owner: {card.owner}</p>
       </CardContent>
+      <Comments cardId={card.id} />
     </>
   );
 }
